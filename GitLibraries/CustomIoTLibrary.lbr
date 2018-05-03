@@ -14,11 +14,11 @@
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="yes"/>
 <layer number="5" name="Route5" color="4" fill="4" visible="no" active="yes"/>
 <layer number="6" name="Route6" color="1" fill="8" visible="no" active="yes"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="yes"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="yes" active="yes"/>
 <layer number="8" name="Route8" color="1" fill="2" visible="no" active="yes"/>
 <layer number="9" name="Route9" color="4" fill="2" visible="no" active="yes"/>
 <layer number="10" name="Route10" color="1" fill="7" visible="no" active="yes"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="yes"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="yes" active="yes"/>
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="yes"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="yes"/>
@@ -40,7 +40,7 @@
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
@@ -64,7 +64,7 @@
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -73,10 +73,51 @@
 </layers>
 <library>
 <packages>
+<package name="SMTU_2450N">
+<smd name="P$1" x="-16.9" y="0" dx="3.5" dy="2.6" layer="1" rot="R90"/>
+<smd name="P$2" x="16.9" y="0" dx="3.5" dy="2.6" layer="1" rot="R90"/>
+<text x="-18.2" y="11.7" size="1.27" layer="25">&gt;NAME</text>
+<text x="-18.2" y="9.1" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-15.6" y1="7.8" x2="-15.6" y2="-7.8" width="0.127" layer="21"/>
+<wire x1="-15.6" y1="7.8" x2="-9.608" y2="7.8" width="0.127" layer="21"/>
+<wire x1="-15.6" y1="-7.8" x2="-9.608" y2="-7.8" width="0.127" layer="21"/>
+<wire x1="9.481" y1="-7.8" x2="15.6" y2="-7.8" width="0.127" layer="21"/>
+<wire x1="15.6" y1="-7.8" x2="15.6" y2="7.8" width="0.127" layer="21"/>
+<wire x1="15.6" y1="7.8" x2="9.511" y2="7.8" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="12.319" width="0.127" layer="21"/>
+<polygon width="0.127" layer="33">
+<vertex x="-6.5" y="3.9"/>
+<vertex x="6.5" y="3.9"/>
+<vertex x="6.5" y="-3.9"/>
+<vertex x="-6.5" y="-3.9"/>
+</polygon>
+</package>
 </packages>
 <symbols>
+<symbol name="SMTU_2450N">
+<pin name="P$1N" x="5.08" y="0" visible="off" length="middle" rot="R180"/>
+<pin name="P$2P" x="-7.62" y="0" visible="off" length="middle"/>
+<wire x1="0" y1="-1.27" x2="0" y2="1.27" width="0.508" layer="94"/>
+<wire x1="-2.54" y1="-3.81" x2="-2.54" y2="3.81" width="0.508" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
+<deviceset name="SMTU_2450N">
+<gates>
+<gate name="G$1" symbol="SMTU_2450N" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SMTU_2450N">
+<connects>
+<connect gate="G$1" pin="P$1N" pad="P$1"/>
+<connect gate="G$1" pin="P$2P" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
